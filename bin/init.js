@@ -32,7 +32,9 @@ var files = [
   "app/context/production.js",
   "app/context/test.js",
   // layouts
-  "layouts/page.dust"
+  "layouts/page.dust",
+  // entry point
+  "app.js"
 ]
 
 module.exports = init
