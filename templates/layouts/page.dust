@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="{lang}">
+<head>
+  <meta charset="UTF-8">
+  <title>{title}</title>
+
+  {! VIEWPORT !}
+  {! default !}
+  {! <meta name="viewport" content="width=device-width, initial-scale=1" /> !}
+  {! disable zooming !}
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  {! disable zooming and scaling !}
+  {!<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1, maximum-scale=1">!}
+
+  {! SEO !}
+  {?description}<meta name="description" content="{description}">{/description}
+  {?keywords}
+  {! Google don't use keywords, but other might do  !}
+    <meta name="keywords" content="{keywords}">
+  {/keywords}
+
+  {! ROBOTS !}
+  {!
+  noindex: prevents the page from being indexed
+  nofollow: prevents the Googlebot from following links from this page
+  nosnippet: prevents a snippet from being shown in the search results
+  noodp: prevents the alternative description from the ODP/DMOZ from being used
+  noarchive: prevents Google from showing the Cached link for a page.
+  unavailable_after:[date]: lets you specify the exact time and date you want to stop crawling and indexing of this page
+  noimageindex: lets you specify that you do not want your page to appear as the referring page for an image that appears in Google search results.
+  none: is equivalent to noindex, nofollow.
+  !}
+  {?robots}<meta name="robots" content="{robots}"/>{/robots}
+
+  {! OPEN GRAPH !}
+  {?og}
+    {#og}
+      <meta property="og:{property}" content="{content}">
+    {/og}
+  {/og}
+
+  {! HUMANS.TXT !}
+  {!<link type="text/plain" rel="author" href="/humans.txt" />!}
+
+  {! FAVICONS !}
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <meta name="apple-mobile-web-app-title" content="app name">
+  <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#ff1e1e">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="application-name" content="app name">
+
+  {+style}{/style}
+</head>
+<body>
+{+body}{/body}
+{+script}{/script}
+</body>
+</html>

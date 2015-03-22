@@ -1,0 +1,30 @@
+{
+  "name": "salamandra",
+  "version": "0.0.1",
+  "description": "A webapp/website framework that doesn't get in your way",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "web",
+    "app",
+    "webapp",
+    "website",
+    "framework",
+    "dust",
+    "stylus",
+    "browserify"
+  ],
+  "dependencies": {
+    "dustjs-helpers": "^1.6.1",
+    "dustjs-linkedin": "^2.6.1",
+    "express": "^4.12.3",
+    "minimist": "~1.1.1",
+    "mkdirp": "~0.5.0",
+    "lodash.template": "~3.3.2",
+    "async": "~0.9.0"
+  },
+  "author": "tunderdomb",
+  "license": "MIT"
+}
