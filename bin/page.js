@@ -5,9 +5,9 @@ var read = require("../utils/read")
 var template = require("../utils/template")
 
 var files = [
-  "page/context.js",
-  "page/index.dust",
-  "page/route.js"
+  "context.json",
+  "index.dust",
+  "route.js"
 ]
 
 module.exports = createPage
@@ -19,10 +19,22 @@ function createPage( name ){
   }
 
   var context = {
-    name: name
+    page: name
   }
-  debugger
-  files.forEach(function( file ){
-    writeCwd(path.join(name, file), template(file, context))
+  var pageDir = path.resolve(process.cwd(), "pages", name)
+  mkdirp(pageDir, function( err ){
+    if( err ){
+      console.error("Error creating page")
+      console.error(err)
+      return
+    }
+
+    debugger
+
+    files.forEach(function( file ){
+      var projectFile = path.join(pageDir, file)
+      var templateFile = path.join("page", file)
+      writeCwd(projectFile, template(templateFile, context))
+    })
   })
 }

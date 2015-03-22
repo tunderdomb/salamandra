@@ -1,7 +1,7 @@
 var fs = require("fs")
 var cwdPath = require("./cwdPath")
 
-module.exports = cwdPath
+module.exports = writeCwd
 
 function writeCwd( src, content, cb ){
   src = cwdPath(src)

@@ -38,6 +38,7 @@ var files = [
 module.exports = init
 
 function init( context ){
+  debugger
   async.series([
     function createDirs( next ){
       async.each(dirs, function( dir, next ){
@@ -46,7 +47,8 @@ function init( context ){
     },
     function copyFiles( next ){
       async.each(files, function( file, next ){
-        writeCwd(file, template(file, context), next)
+        var content = template(file, context)
+        writeCwd(file, content, next)
       }, next)
     }
   ], function done( err ){
