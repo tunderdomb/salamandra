@@ -2,9 +2,11 @@ salamandra
 ==========
 
 Do you like web apps? Do you like *writing* web apps?
-Ever thought that project scaffolding could be less painful and straightforward?
+Ever thought that project scaffolding could be less painful and more straightforward?
 
 Use salamandra to quickly make a project, easily create pages and serve the app with express.
+
+**NOTE: this module is work in progress**
 
 ## Install
 
