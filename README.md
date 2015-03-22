@@ -34,6 +34,8 @@ This will scaffold a page to `pages/<name>` containing the following files:
  - `index.dust` The default template to render.
  - `route.js` The route handler that renders this page.
 
+The default page template is using the default page layout from `layouts/page.dust`.
+
 ## Usage
 
 ### Serve the app
