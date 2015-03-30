@@ -1,12 +1,13 @@
 var mkdirp = require("mkdirp")
 var writeCwd = require("../utils/writeCwd")
 var path = require("path")
-var read = require("../utils/read")
 var template = require("../utils/template")
 
 var files = [
   "context.json",
   "index.dust",
+  "index.styl",
+  "client.js",
   "route.js"
 ]
 
@@ -14,13 +15,13 @@ module.exports = createPage
 
 function createPage( name ){
   if( !name ){
-    console.error("Can't create page: missing argument 'name'")
-    return
+    return console.error("Can't create page: missing argument 'name'")
   }
 
   var context = {
     page: name
   }
+
   var pageDir = path.resolve(process.cwd(), "pages", name)
   mkdirp(pageDir, function( err ){
     if( err ){
@@ -29,12 +30,23 @@ function createPage( name ){
       return
     }
 
-    debugger
+    var createdFiles = []
 
     files.forEach(function( file ){
       var projectFile = path.join(pageDir, file)
       var templateFile = path.join("page", file)
-      writeCwd(projectFile, template(templateFile, context))
+      var createdFile = writeCwd(projectFile, template(templateFile, context))
+      if( createdFile ){
+        createdFiles.push(createdFile)
+      }
     })
+
+    if( createdFiles.length){
+      console.log("Created page %s with file(s):", name)
+      console.log(createdFiles.join("\n"))
+    }
+    else {
+      console.log("Page already exists")
+    }
   })
 }

@@ -22,6 +22,7 @@ var dirs = [
   "style/",
   "tasks/"
 ]
+
 var files = [
   // config
   "app/config/development.js",
