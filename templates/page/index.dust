@@ -1,5 +1,11 @@
 {>"layouts/page"/}
 
-{<style}{/style}
-{<body}{/body}
-{<script}{/script}
+{<style}
+  <link rel="stylesheet" href="/static/css/<%= page %>/index.css"/>
+{/style}
+{<body}
+
+{/body}
+{<script}
+  <link rel="stylesheet" href="/static/js/<%= page %>/client.js"/>
+{/script}

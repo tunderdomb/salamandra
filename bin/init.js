@@ -41,7 +41,6 @@ var files = [
 module.exports = init
 
 function init( context ){
-  debugger
   async.series([
     function createDirs( next ){
       async.each(dirs, function( dir, next ){

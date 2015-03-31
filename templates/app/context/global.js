@@ -1,0 +1,2 @@
+// global config
+module.exports = {}
