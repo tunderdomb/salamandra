@@ -1,17 +1,28 @@
 var readOrRequire = require("../utils/readOrRequire")
 var getPageFilePath = require("../utils/getPageFilePath")
 var merge = require("../utils/merge")
-var staticContext = require("../lib/context")
+var getContext = require("../lib/context")
+var config = require("../lib/config")()
+var staticContext = null
 
 module.exports = function createContext( page, inlineContext, dynamicContext ){
-  var pageContext = {}
-  try{
-    pageContext = readOrRequire(getPageFilePath(page, "context.json"))
+  // in production, the global+pageContext could be cached
+  if( config.dev || config.prod && !staticContext ){
+    var globalContext = getContext(config.dev)
+    var pageContext
+    try{
+      pageContext = readOrRequire(getPageFilePath(page, "context.json"))
+    }
+    catch( e ){
+      // this page doesn't have a context
+      console.warn("Can't find static context for '%s'", page)
+    }
+    staticContext = merge(globalContext, pageContext)
   }
-  catch( e ){
-    // this page doesn't have a context
-    console.warn("Can't find static context for '%s'", page)
-  }
-  // TODO: in production, the global+pageContext could be cached
-  return merge(staticContext, pageContext, inlineContext, dynamicContext)
+
+  return merge(staticContext, inlineContext, dynamicContext, {
+    // page name is always accessible
+    // also used by style asset url helper
+    page: page
+  })
 }
