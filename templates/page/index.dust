@@ -7,5 +7,5 @@
 
 {/body}
 {<script}
-  <link rel="stylesheet" href="/static/js/<%= page %>/client.js"/>
+  <script type="text/javascript" src="/static/js/<%= page %>/client.js"></script>
 {/script}

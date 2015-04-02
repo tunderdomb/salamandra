@@ -2,14 +2,15 @@ var mkdirp = require("mkdirp")
 var writeCwd = require("../utils/writeCwd")
 var template = require("../utils/template")
 var async = require("async")
+var glob = require("glob")
 
 var dirs = [
   "app/",
   "app/config/",
   "app/context/",
   "bundles/",
-  "bundles/sprite/",
-  "bundles/templates/",
+  //"bundles/sprite/",
+  //"bundles/templates/",
   "layouts/",
   "pages/",
   "snippets/",
@@ -24,19 +25,12 @@ var dirs = [
 ]
 
 var files = [
-  // config
-  "app/config/development.js",
-  "app/config/production.js",
-  "app/config/test.js",
-  // context
-  "app/context/development.js",
-  "app/context/production.js",
-  "app/context/test.js",
-  // layouts
-  "layouts/page.dust",
-  // entry point
-  "app.js"
+  "app.js",
+  "gulpfile.js"
 ]
+  .concat(glob.sync("app/**/*.*", {cwd: __dirname+"/../templates"}))
+  .concat(glob.sync("tasks/*.js", {cwd: __dirname+"/../templates"}))
+console.log(files)
 
 module.exports = init
 

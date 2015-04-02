@@ -1,4 +1,4 @@
-var config = require("../lib/config")
+var config = require("../lib/config")()
 var read = require("./read")
 var readJSON = require("../utils/readJSON")
 

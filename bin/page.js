@@ -2,14 +2,9 @@ var mkdirp = require("mkdirp")
 var writeCwd = require("../utils/writeCwd")
 var path = require("path")
 var template = require("../utils/template")
+var glob = require("glob")
 
-var files = [
-  "context.json",
-  "index.dust",
-  "index.styl",
-  "client.js",
-  "route.js"
-]
+var files = glob.sync("**/*.*", {cwd: __dirname+"/../templates/page"})
 
 module.exports = createPage
 
