@@ -1,6 +1,6 @@
 {
   "name": "salamandra",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A webapp/website framework that doesn't get in your way",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,7 @@
     "async": "^0.9.0",
     "autoprefixer-core": "^5.1.8",
     "browser-sync": "^2.5.2",
+    "clean-css": "^3.1.8",
     "connect-inject": "^0.3.2",
     "dustjs-helpers": "^1.6.1",
     "dustjs-linkedin": "^2.6.1",
@@ -33,7 +34,7 @@
   "author": "tunderdomb",
   "license": "MIT",
   "bin": {
-    "salamandra": "index.js"
+    "salamandra": "bin/index.js"
   },
   "directories": {
     "test": "test"
