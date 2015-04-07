@@ -30,9 +30,11 @@ salamandra page <name>
 
 This will scaffold a page to `pages/<name>` containing the following files:
 
+ - `client.js` Client side entry point.
  - `context.json` Rendering context for this page.
  - `index.dust` The default template to render.
  - `route.js` The route handler that renders this page.
+ - `index.styl` Page style entry point.
 
 The default page template is using the default page layout from `layouts/page.dust`.
 
@@ -64,7 +66,7 @@ app.get("/", salamandra.render("home"))
 
 `.render("home")` will try to render `pages/home/index.dust` using `pages/home/context.json`.
 
-`.render("home/sub")` will try to render `pages/home/sub.dust` using `pages/home/sub/context.json`.
+`.render("home/sub")` will try to render `pages/home/index.dust` using `pages/home/sub/context.json`.
 
 ### Contexts
 
