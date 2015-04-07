@@ -1,6 +1,5 @@
 var salamandra = require("salamandra")
 var gulp = require("gulp")
-var sourcemaps = require("gulp-sourcemaps")
 
 gulp.task("style", function(  ){
   return salamandra.style.task(gulp, {
