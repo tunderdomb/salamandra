@@ -24,4 +24,4 @@ It will look something like this:
     app.js
     gulpfile.js
 
-You can check out the file template in [templates/](templates/)
+You can check out the file template in [templates/](../templates/)
