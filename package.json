@@ -1,6 +1,6 @@
 {
   "name": "salamandra",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "A webapp/website framework that doesn't get in your way",
   "main": "index.js",
   "scripts": {
