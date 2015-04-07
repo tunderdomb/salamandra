@@ -15,7 +15,7 @@ module.exports = function createContext( page, inlineContext, dynamicContext ){
     }
     catch( e ){
       // this page doesn't have a context
-      console.warn("Can't find static context for '%s'", page)
+      console.warn("Can't find page context for '%s'", page)
     }
     staticContext = merge(globalContext, pageContext)
   }
