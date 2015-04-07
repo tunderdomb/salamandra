@@ -32,7 +32,7 @@ salamandra page <name>
 node app
 ```
 
-Check out the docs for more!
+Check out the [docs](docs) for more!
 
 ## Licence
 
