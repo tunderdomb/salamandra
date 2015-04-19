@@ -17,6 +17,20 @@ app.listen(salamandra.config.PORT, function(  ){
 })
 ```
 
+Now you can run it like this:
+
+```
+node app
+```
+
+By default, salamandra is running in `production` mode.
+You can switch environments with a cli argument:
+
+```
+node app dev
+```
+
+
 it's really straight forward to run a salamandra app,
 and it doesn't require you to write special logic.
 

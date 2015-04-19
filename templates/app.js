@@ -5,6 +5,6 @@ var app = salamandra.express()
 //require("./pages/<page>/route")(app)
 
 app.listen(salamandra.config.PORT, function(  ){
-  console.log("app listening (%s)", salamandra.config.env)
+  console.log("app listening on %s (%s)", salamandra.config.PORT||"undefined port", salamandra.config.env)
   console.log("config", salamandra.config)
 })
