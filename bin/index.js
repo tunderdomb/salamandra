@@ -6,7 +6,7 @@ var action = argv._[0]
 switch( action ){
   // page <name>
   case "page":
-    require("./page").call(null, argv._)
+    require("./page").apply(null, argv._.splice(1))
     break
   case "init":
     require("./init")(argv)
