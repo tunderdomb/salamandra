@@ -1,11 +1,13 @@
 {>"layouts/page"/}
 
 {<style}
-  <link rel="stylesheet" href="/static/css/<%= page %>/index.css"/>
+  {! include the page index style !}
+  {@stylesheet/}
 {/style}
 {<body}
 
 {/body}
 {<script}
-  <script type="text/javascript" src="/static/js/<%= page %>/client.js"></script>
+  {! include the page index script !}
+  {@script/}
 {/script}

@@ -2,10 +2,7 @@ var gulp = require("gulp")
 
 require("./tasks/style")
 require("./tasks/browserify")
+require("./tasks/compile")
+require("./tasks/watch")
 
-gulp.task("compile", ["style", "browserify"])
-
-gulp.task("default", function(  ){
-  gulp.watch("**/*.styl", ["style"])
-  gulp.watch("pages/**/*.js", ["browserify"])
-})
+gulp.task("default", ["watch"])
