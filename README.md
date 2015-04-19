@@ -32,6 +32,49 @@ salamandra page <name>
 node app
 ```
 
+## Development
+
+Install gulp
+
+```
+npm install gulp --save
+```
+
+Create a page (edit it at `pages/home/`).
+
+```
+salamandra page home
+```
+
+Initialize the new page's static assets
+
+```
+gulp compile
+```
+
+Add the new page's route to the app (`app.js`)
+
+```js
+require("./pages/home/route")(app)
+```
+
+Run the development environment
+
+```
+node app dev
+```
+
+Run gulp to watch files and compile on change
+
+```
+gulp
+```
+
+Open `localhost:8000/home`.
+
+
+## Docs
+
 Check out the [docs](docs) for more!
 
 ## Licence
