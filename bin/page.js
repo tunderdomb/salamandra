@@ -13,6 +13,8 @@ function createPage( name ){
     return console.error("Can't create page: missing argument 'name'")
   }
 
+  name = ""+name
+
   var context = {
     page: name
   }

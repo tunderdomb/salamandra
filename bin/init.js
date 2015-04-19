@@ -30,7 +30,7 @@ var files = [
 ]
   .concat(glob.sync("app/**/*.*", {cwd: __dirname+"/../templates"}))
   .concat(glob.sync("tasks/*.js", {cwd: __dirname+"/../templates"}))
-console.log(files)
+  .concat(glob.sync("layouts/*.dust", {cwd: __dirname+"/../templates"}))
 
 module.exports = init
 

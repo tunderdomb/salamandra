@@ -61,10 +61,23 @@
   <meta name="msapplication-TileImage" content="/mstile-144x144.png">
   <meta name="application-name" content="app name">
 
+  {! include the page index style !}
+  {@stylesheet/}
+  {! include page custom styles !}
   {+style}{/style}
 </head>
 <body>
-{+body}{/body}
-{+script}{/script}
+  {+body}{/body}
+  {! log the context for rerefence in the browser !}
+  {?config.dev}
+  <script type="text/javascript">
+    console.info("page rendering context:")
+    console.info({@contextDump/})
+  </script>
+  {/config.dev}
+  {! include the page index script !}
+  {@script/}
+  {! include custom scripts !}
+  {+script}{/script}
 </body>
 </html>

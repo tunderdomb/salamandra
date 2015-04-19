@@ -55,3 +55,32 @@ gulp.task("style", function(  ){
   gulp.watch("**/*.styl", ["style"])
 ```
 
+### dust stylesheet tag
+
+Depending on the environment it outputs a `link` tag.
+Of production, it outputs a `href` attribute with a `min.css` ending, otherwise a `.css` ending.
+
+```dust
+{@stylesheet/}
+```
+
+Without parameters it outputs the entry stylesheet for the page (`index.css`).
+If you render `home`, the output will be:
+
+```html
+<link rel="stylesheet" href="/static/css/home/index.css>
+```
+
+#### parameters
+
+The stylesheet helper accepts an optional `href` parameter:
+
+```dust
+{@stylesheet href="hello.css"/}
+```
+
+Outputs:
+
+```html
+`<link rel="stylesheet" href="/static/css/hello.css`
+```

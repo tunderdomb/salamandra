@@ -6,11 +6,9 @@ var action = argv._[0]
 switch( action ){
   // page <name>
   case "page":
-    var name = argv._[1]
-    require("./page")(name)
+    require("./page").call(null, argv._)
     break
   case "init":
     require("./init")(argv)
     break
-
 }

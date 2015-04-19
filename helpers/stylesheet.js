@@ -1,7 +1,7 @@
 var context = require("../lib/config")
 var renameExtension = require("../utils/renameExtension")
 var path = require("path")
-var normalizePath = require("../utils/normalizePath")
+var getStaticAssetUrl = require("../utils/getStaticAssetUrl")
 
 module.exports = function( chunk, context, bodies, params ){
   var href = params.href || "index.css"
@@ -19,8 +19,4 @@ module.exports = function( chunk, context, bodies, params ){
   }
   var tag = '<link rel="stylesheet" href="'+href+'"/>'
   return chunk.write(tag)
-}
-
-function getStaticAssetUrl( type, page, url ){
-  return normalizePath(path.join("/static", type, page, url))
 }

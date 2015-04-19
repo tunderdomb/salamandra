@@ -1,5 +1,12 @@
 // global config
 module.exports = {
+  client: {
+    browserify: {
+      basedir: process.cwd(),
+      debug: true
+    },
+    minify: {}
+  },
   style: {
     // always re-read this config, or work with cached values
     fresh: false,
